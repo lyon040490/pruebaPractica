@@ -6,10 +6,10 @@ spring:
   name: pagos
   data:
     mongodb:
-      uri: mongodb://localhost:27017/paymentsdb
+      uri: mongodb://mongo:27017/paymentsdb
 
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest

@@ -1,0 +1,47 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["concept", "ammount", "sender", "recipient", "amountTotal", "status", "createdAt"],
+    "properties": {
+      "id": {
+        "bsonType": "string",
+        "description": "ID del pago, puede ser generado automáticamente"
+      },
+      "concept": {
+        "bsonType": "string",
+        "description": "Concepto del pago"
+      },
+      "ammount": {
+        "bsonType": "int",
+        "minimum": 0,
+        "description": "Cantidad del pago en unidades enteras"
+      },
+      "sender": {
+        "bsonType": "string",
+        "description": "Quién envía el pago"
+      },
+      "client": {
+        "bsonType": "string",
+        "description": "Cliente que recibe el pago"
+      },
+      "amountTotal": {
+        "bsonType": "decimal",
+        "minimum": 0,
+        "description": "Monto total del pago"
+      },
+      "status": {
+        "bsonType": "string",
+        "enum": ["CREATED","PROCESSING","COMPLETED","CANCELED","FAILED"],
+        "description": "Estado del pago"
+      },
+      "createdAt": {
+        "bsonType": "date",
+        "description": "Fecha de creación del pago"
+      },
+      "updatedAt": {
+        "bsonType": "date",
+        "description": "Fecha de última actualización del pago"
+      }
+    }
+  }
+}

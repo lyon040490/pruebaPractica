@@ -1,0 +1,116 @@
+{
+  "info": {
+    "_postman_id": "e5da1933-c9af-4b7c-967e-76b7354cfc30",
+    "name": "Payments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "11500372"
+  },
+  "item": [
+    {
+      "name": "Create payment",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"concept\":\"Compra de una computadora\",\r\n    \"ammount\":\"5300\",\r\n    \"sender\":\"Manuel Anaya\",\r\n    \"recipient\":\"Ana Lopez\",\r\n    \"amountTotal\":\"5330\",\r\n    \"status\":\"CREATED\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/payments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "payments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get payment",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"concept\":\"Pago de luz\",\r\n    \"ammount\":\"300\",\r\n    \"sender\":\"Alan Marquez\",\r\n    \"client\":\"Ana Lopez\",\r\n    \"amountTotal\":\"330\",\r\n    \"status\":\"CREATED\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/payments/69954f6318203bc573171821/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "payments",
+            "69954f6318203bc573171821",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Change status payment",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"concept\":\"Pago de luz\",\r\n    \"ammount\":\"300\",\r\n    \"sender\":\"Alan Marquez\",\r\n    \"client\":\"Ana Lopez\",\r\n    \"amountTotal\":\"330\",\r\n    \"status\":\"CREATED\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/payments/69954f6318203bc573171821/status?status=FAILED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "payments",
+            "69954f6318203bc573171821",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "FAILED"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
